@@ -1,0 +1,39 @@
+/* En vista de escritorio, los enlaces serán blancos */
+
+.btn{
+  margin-bottom: 10px !important;
+}
+
+footer{
+  height: 50px;
+}
+
+.fixed-top-offset {
+  margin-top: 65px; /* Ajuste para que el contenido no se oculte por le navbar */
+}
+
+
+.navbar {
+    background-color: rgb(102, 187, 106) !important;
+}
+
+.text-dark{
+    color: black !important;
+}
+
+.bg-danger{
+  background-color: rgb(102, 187, 106) !important;
+}
+
+.nav-canvas {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: black !important;
+    text-decoration: none;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .nav-link {
+      transition: none;
+    }
+  }
