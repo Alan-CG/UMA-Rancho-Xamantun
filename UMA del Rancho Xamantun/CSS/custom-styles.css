@@ -37,3 +37,10 @@ footer{
       transition: none;
     }
   }
+
+
+/*Estilo par el mapa */
+  #map { 
+    height: 400px;
+    width: 600px;
+ }
