@@ -1,4 +1,4 @@
-<?php include 'model/leer_datos_animales.php' ?>;
+<?php include 'model/leer_avistamientos_flora.php' ?>;
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,7 +18,7 @@
 <body>
 
   <header>
-    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark shadow-sm p-3 mb-5">
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
       <div class="container-fluid">
         <a class="navbar-brand fs-2 text-white" href="#">UMA del Rancho
           Xamantún</a>
@@ -39,7 +39,7 @@
                 <a class="nav-link dropdown-toggle text-dark fs-3" href="#" role="button"
                   data-bs-toggle="dropdown">Fauna</a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Especies</a></li>
+                  <li><a class="dropdown-item" href="especie_animalR.php">Especies</a></li>
                   <li><a class="dropdown-item" href="#">Avistamientos</a></li>
                 </ul>
               </li>
@@ -47,7 +47,7 @@
                 <a class="nav-link dropdown-toggle text-dark fs-3 d-none d-md-block" href="#" role="button"
                   data-bs-toggle="dropdown">Flora</a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Especies</a></li>
+                  <li><a class="dropdown-item" href="especie_floraR.php">Especies</a></li>
                   <li><a class="dropdown-item" href="#">Avistamientos</a></li>
                 </ul>
               </li>
@@ -63,10 +63,14 @@
   <br>
   <main class="fixed-top-offset">
     <div class="container">
+      <h4 class="text-center">Listado de avistamientos de flora</h4>
+      <div class="card card-default border-light shadow p-3 mb-5">
+        
+      </div>
     </div>
   </main>
   <br>
-  <footer class=" bg-danger text-white text-center py-2 fixed-bottom shadow">
+  <footer class=" bg-danger text-white text-center py-3 fixed-bottom">
     <div class="container-fluid">
       <h4>&copy; 2025-UMA del Rancho Xamantún. Todos los derechos reservados.</h4>
     </div>
