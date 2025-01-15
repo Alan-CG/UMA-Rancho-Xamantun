@@ -1,5 +1,4 @@
-<?php include 'model/especie_flora_select.php' ?>;
-<?php include 'model/modificar_avistamiento_flora.php' ?>;
+<?php include 'model/especie_fauna_select.php' ?>;
 <!DOCTYPE html>
 <html lang="en">
 
@@ -77,9 +76,8 @@
         <div class="container">
             <h4 class="text-center">Formulario de registro de avistamiento</h4>
             <div class="card card-default border-light shadow p-3 mb-5">
-                <form action="model/modificar_avistamiento_flora.php" method="POST" class="needs-validation" enctype="multipart/form-data" novalidate>
+                <form action="model/alta_avistamiento_fauna.php" method="POST" class="needs-validation" enctype="multipart/form-data" novalidate>
                     <div class="row row-cols-4">
-                        <input hidden name="id_avistamiento" value="<?= $avistamientos['id_avistamiento'] ?>" required>
                         <div class="mb-3">
                             <label class="form-label" for="input_especie">Especie</label>
                             <select class="form-select" id="input_especie" name="input_especie" required>
@@ -91,21 +89,21 @@
                         <div class="mb-3">
                             <label class="form-label" for="input_fecha_avista">Fecha del avistamiento</label>
                             <input type="date" class="form-control" id="input_fecha_avista"
-                                name="input_fecha_avista" value="<?= $avistamientos['fecha_avistamiento'] ?>" required>
+                                name="input_fecha_avista" required>
                             <div class="valid-feedback">Campo correcto!</div>
                             <div class="invalid-feedback">Rellena el campo correctamente</div>
                         </div>
                         <div class="mb-3">
                             <label class="form-label" for="input_latitud">Latitud</label>
                             <input type="number" step="0.00000001" class="form-control" id="input_latitud"
-                                name="input_latitud" value="<?= $avistamientos['latitud'] ?>" required>
+                                name="input_latitud" placeholder="Coordenada del avistamiento" required>
                             <div class="valid-feedback">Campo correcto!</div>
                             <div class="invalid-feedback">Rellena el campo correctamente</div>
                         </div>
                         <div class="mb-3">
                             <label class="form-label" for="input_longitud">Longitud</label>
                             <input type="number" step="0.00000001" class="form-control" id="input_longitud"
-                                name="input_longitud" value="<?= $avistamientos['longitud'] ?>" required>
+                                name="input_longitud" placeholder="Coordenada del avistamiento" required>
                             <div class="valid-feedback">Campo correcto!</div>
                             <div class="invalid-feedback">Rellena el campo correctamente</div>
                         </div>
@@ -114,34 +112,28 @@
                     <div class="row row-cols-2">
                         <div class="mb-3">
                             <label class="form-label" for="input_descripcion">Descripción</label>
-                            <textarea class="form-control" id="input_descripcion" name="input_descripcion" required><?= $avistamientos['descripcion'] ?></textarea>
+                            <textarea class="form-control" id="input_descripcion" name="input_descripcion" placeholder="Información sobre el avistamiento" required></textarea>
                             <div class="valid-feedback">Campo correcto!</div>
                             <div class="invalid-feedback">Rellena el campo correctamente</div>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label" for="input_imagen">Imagen cargada previamente</label>
-                            <div class="row">
-                                <img src="<?= $avistamientos['ruta_imagen']; ?>" style="max-width: 300px; height: auto;">
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label" for="input_imagen">Cargar nueva imagen</label>
+                            <label class="form-label" for="input_imagen">Imagen</label>
                             <input type="file" class="form-control" id="input_imagen"
-                                name="input_imagen" placeholder="Orden al que pertenece" accept="image/*">
+                                name="input_imagen" placeholder="Orden al que pertenece" accept="image/*" required>
                             <div class="valid-feedback">Campo correcto!</div>
                             <div class="invalid-feedback">Rellena el campo correctamente</div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group col-md-4">
-                            <button type="submit" class="btn btn-success" name="submit">Modificar</button>
+                            <button type="submit" class="btn btn-success" name="submit">Registrar</button>
                         </div>
                     </div>
                 </form>
             </div>
             <div style="padding-bottom:0.5cm" class="row w-100 align-items-center">
                 <div class="col text-center">
-                    <a href="avistamiento_animalR.php" class="btn btn-success bi bi-arrow-return-left"></a>
+                    <a href="avistamiento_faunaR.php" class="btn btn-success bi bi-arrow-return-left"></a>
                 </div>
             </div>
         </div>

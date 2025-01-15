@@ -1,4 +1,4 @@
-<?php include 'model/leer_especies_animales.php' ?>;
+<?php include 'model/leer_avistamiento_fauna_ficha.php' ?>;
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,6 +12,12 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
     crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""></script>
   <title>Document</title>
 </head>
 
@@ -39,16 +45,26 @@
                 <a class="nav-link dropdown-toggle text-dark fs-3" href="#" role="button"
                   data-bs-toggle="dropdown">Fauna</a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="especie_animalR.php">Especies</a></li>
-                  <li><a class="dropdown-item" href="#">Avistamientos</a></li>
+                  <li><a class="dropdown-item" href="especies_fauna.php">Especies</a></li>
+                  <li><a class="dropdown-item" href="avistamientos_fauna.php">Avistamientos</a></li>
                 </ul>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle text-dark fs-3 d-none d-md-block" href="#" role="button"
                   data-bs-toggle="dropdown">Flora</a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="especie_floraR.php">Especies</a></li>
-                  <li><a class="dropdown-item" href="#">Avistamientos</a></li>
+                  <li><a class="dropdown-item" href="especies_flora.php">Especies</a></li>
+                  <li><a class="dropdown-item" href="avistamientos_flora.php">Avistamientos</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-dark fs-3 d-none d-md-block" href="#" role="button"
+                  data-bs-toggle="dropdown">Administración</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="especie_faunaR.php">Registros especies Fauna</a></li>
+                  <li><a class="dropdown-item" href="avistamiento_faunaR.php">Registros avistamientos Fauna</a></li>
+                  <li><a class="dropdown-item" href="especie_floraR.php">Registros especies Flora</a></li>
+                  <li><a class="dropdown-item" href="avistamiento_floraR.php">Registros avistamientos Flora</a></li>
                 </ul>
               </li>
               <li class="nav-item">
@@ -63,20 +79,27 @@
   <br>
   <main class="fixed-top-offset">
     <div class="container">
-      <h4 class="text-center">Listado de especies de Fauna</h4>
-      <div class="row row-cols-5 grid gap-2">
-        <?php
-        foreach ($avistamientos as $avistamiento): ?>
-          <div style="width: 16rem;" class="card card-default border-light shadow p-3 mb-5">
-            <img src="<?= $avistamiento['ruta_imagen']; ?>" class="card-img-top" style="max-width: 220; height: 160;">
-            <div class="card-body">
-              <h5 class="card-title"><?= $avistamiento['especie']; ?></h5>
-              <p style="max-width: 190; height: 50;" class="card-text"><?= $avistamiento['nombre_comun']; ?></p>
-              <a href="especie_animal_ficha.php?id_especie=<?= $avistamiento['id_especie'] ?>" class="btn btn-primary">Más información</a>
-            </div>
-          </div>
-        <?php endforeach; ?>
+      <h4 class="text-center">Ficha de avistamiento</h4>
+      <div class="col">
+        <a href="avistamientos_fauna.php" class="btn btn-success bi bi-arrow-return-left"> Regresar</a>
       </div>
+      <div class="card card-default border-light shadow p-3 mb-5">
+        <div class="row">
+          <div class="col">
+            <input type="hidden" id="id_avistamiento" value="<?= $avistamientos['id_avistamiento'] ?>">
+            <h4 class="fs-5 text">Fecha de avistamiento: <?= $avistamientos['fecha_avistamiento'] ?></h4>
+            <img class="mt-3" style="width: 450; height: 300;" src="<?= $avistamientos['ruta_imagen'] ?>">
+            <p style="max-width: 450px;" class="fs-5 text mt-4"> Descripción: <?= $avistamientos['descripcion'] ?></p>
+          </div>
+          <div class="col">
+            <h4 class="fs-5 text text-center">Nombre científico: <?= $avistamientos['nombre_cientifico'] ?></h4>
+            <p class="fs-5 text text-center">Nombre común: <?= $avistamientos['nombre_comun'] ?></p>
+            <div id="map"></div>
+            <h4 class="fs-5 text text-center mt-3">Ubicación del avistamiento</h4>
+          </div>
+        </div>
+      </div>
+      <script src="JS/puntos_avistamiento_fauna.JS"></script>
     </div>
   </main>
   <br>
@@ -85,6 +108,7 @@
       <h4>&copy; 2025-UMA del Rancho Xamantún. Todos los derechos reservados.</h4>
     </div>
   </footer>
+
 </body>
 
 </html>

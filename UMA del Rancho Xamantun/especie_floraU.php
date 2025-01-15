@@ -18,13 +18,12 @@
 <body>
 
     <header>
-        <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark shadow-sm p-3 mb-5">
+        <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
             <div class="container-fluid">
                 <a class="navbar-brand fs-2 text-white" href="#">UMA del Rancho
                     Xamantún</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
-                    data-bs-target="#offcanvasNavbar" aria-controls="offcanvasDarkNavbar"
-                    aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                    aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasNavbar"
@@ -40,16 +39,26 @@
                                 <a class="nav-link dropdown-toggle text-dark fs-3" href="#" role="button"
                                     data-bs-toggle="dropdown">Fauna</a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="especie_animalR.php">Especies</a></li>
-                                    <li><a class="dropdown-item" href="#">Avistamientos</a></li>
+                                    <li><a class="dropdown-item" href="especies_fauna.php">Especies</a></li>
+                                    <li><a class="dropdown-item" href="avistamientos_fauna.php">Avistamientos</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle text-dark fs-3 d-none d-md-block" href="#"
-                                    role="button" data-bs-toggle="dropdown">Flora</a>
+                                <a class="nav-link dropdown-toggle text-dark fs-3 d-none d-md-block" href="#" role="button"
+                                    data-bs-toggle="dropdown">Flora</a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="especie_floraR.php">Especies</a></li>
-                                    <li><a class="dropdown-item" href="#">Avistamientos</a></li>
+                                    <li><a class="dropdown-item" href="especies_flora.php">Especies</a></li>
+                                    <li><a class="dropdown-item" href="avistamientos_flora.php">Avistamientos</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle text-dark fs-3 d-none d-md-block" href="#" role="button"
+                                    data-bs-toggle="dropdown">Administración</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="especie_faunaR.php">Registros especies Fauna</a></li>
+                                    <li><a class="dropdown-item" href="avistamiento_faunaR.php">Registros avistamientos Fauna</a></li>
+                                    <li><a class="dropdown-item" href="especie_floraR.php">Registros especies Flora</a></li>
+                                    <li><a class="dropdown-item" href="avistamiento_floraR.php">Registros avistamientos Flora</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item">

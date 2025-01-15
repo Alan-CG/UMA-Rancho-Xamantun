@@ -39,16 +39,26 @@
                 <a class="nav-link dropdown-toggle text-dark fs-3" href="#" role="button"
                   data-bs-toggle="dropdown">Fauna</a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="especie_animalR.php">Especies</a></li>
-                  <li><a class="dropdown-item" href="#">Avistamientos</a></li>
+                  <li><a class="dropdown-item" href="especies_fauna.php">Especies</a></li>
+                  <li><a class="dropdown-item" href="avistamientos_fauna.php">Avistamientos</a></li>
                 </ul>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle text-dark fs-3 d-none d-md-block" href="#" role="button"
                   data-bs-toggle="dropdown">Flora</a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="especie_floraR.php">Especies</a></li>
-                  <li><a class="dropdown-item" href="#">Avistamientos</a></li>
+                  <li><a class="dropdown-item" href="especies_flora.php">Especies</a></li>
+                  <li><a class="dropdown-item" href="avistamientos_flora.php">Avistamientos</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-dark fs-3 d-none d-md-block" href="#" role="button"
+                  data-bs-toggle="dropdown">Administración</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="especie_faunaR.php">Registros especies Fauna</a></li>
+                  <li><a class="dropdown-item" href="avistamiento_faunaR.php">Registros avistamientos Fauna</a></li>
+                  <li><a class="dropdown-item" href="especie_floraR.php">Registros especies Flora</a></li>
+                  <li><a class="dropdown-item" href="avistamiento_floraR.php">Registros avistamientos Flora</a></li>
                 </ul>
               </li>
               <li class="nav-item">
@@ -63,7 +73,7 @@
   <br>
   <main class="fixed-top-offset">
     <div class="container">
-      <h4 class="text-center">Listado de avistamientos de flora</h4>
+      <h4 class="text-center">Listado de avistamientos de Flora</h4>
       <div class="card card-default border-light shadow p-3 mb-5">
         <div class="form-row">
           <div class="form-group col">

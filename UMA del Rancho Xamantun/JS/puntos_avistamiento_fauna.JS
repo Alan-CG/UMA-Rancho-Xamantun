@@ -33,7 +33,7 @@ const idAvistamiento = document.getElementById('id_avistamiento').value;
 
 
 //Se agrega el marcador
-fetch(`./model/mapas/avistamiento_animal.php?id_avistamiento=${idAvistamiento}`)
+fetch(`./model/mapas/avistamiento_fauna.php?id_avistamiento=${idAvistamiento}`)
     .then(response => response.json())
     .then(data => {
         data.forEach(punto => {

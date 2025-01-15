@@ -1,4 +1,4 @@
-<?php include 'model/leer_avistamientos_flora.php' ?>;
+<?php include 'model/leer_avistamientos_fauna.php' ?>;
 <!DOCTYPE html>
 <html lang="en">
 
@@ -73,20 +73,67 @@
   <br>
   <main class="fixed-top-offset">
     <div class="container">
-      <h4 class="text-center">Listado de avistamientos de Flora</h4>
-      <div class="row row-cols-5 grid gap-2">
-        <?php
-        foreach ($avistamientos as $avistamiento): ?>
-          <div style="width: 16rem;" class="card card-default border-light shadow p-3 mb-5">
-            <img src="<?= $avistamiento['ruta_imagen']; ?>" class="card-img-top" style="max-width: 220; height: 160;">
-            <div class="card-body">
-              <h5 class="card-title"><?= $avistamiento['especie']; ?></h5>
-              <p style="max-width: 190; height: 50;" class="card-text"><?= $avistamiento['descripcion']; ?></p>
-              <p class="card-text"><?= $avistamiento['fecha_avistamiento']; ?></p>
-              <a href="avistamiento_flora_ficha.php?id_avistamiento=<?= $avistamiento['id_avistamiento'] ?>" class="btn btn-primary">Más información</a>
-            </div>
+      <h4 class="text-center">Listado de avistamientos de Fauna</h4>
+      <div class="card card-default border-light shadow p-3 mb-5">
+        <div class="form-row">
+          <div class="form-group col">
+            <a class="btn btn-success shadow-sm" href="avistamiento_faunaC.php">Nuevo avistamiento</a>
           </div>
-        <?php endforeach; ?>
+        </div>
+        <div class="row w-100 align-items-center table-responsive-md justify-content-center">
+          <div class="col text-center table-responsive">
+            <table class="table table-striped text-center align-middle">
+              <thead>
+                <tr>
+                  <th hidden scope="col">ID</th>
+                  <th scope="col">Especie avistada</th>
+                  <th scope="col">Fecha de avistamiento</th>
+                  <th scope="col">Latitud</th>
+                  <th scope="col">Longitud</th>
+                  <th scope="col">Descripción</th>
+                  <th scope="col">Fotografía</th>
+                  <th scope="col">Editar registro</th>
+                  <th scope="col">Eliminar Registro</th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php foreach ($avistamientos as $avistamiento): ?>
+                  <tr>
+                    <td hidden>
+                      <?= $avistamiento['id_avistamiento']; ?>
+                    </td>
+                    <td>
+                      <?= $avistamiento['especie']; ?>
+                    </td>
+                    <td>
+                      <?= $avistamiento['fecha_avistamiento']; ?>
+                    </td>
+                    <td>
+                      <?= $avistamiento['latitud']; ?>
+                    </td>
+                    <td>
+                      <?= $avistamiento['longitud']; ?>
+                    </td>
+                    <td>
+                      <?= $avistamiento['descripcion']; ?>
+                    </td>
+                    <td>
+                      <img src="<?= $avistamiento['ruta_imagen']; ?>" style="max-width: 100px; height: auto;">
+                    </td>
+                    <td>
+                      <a class="bi bi bi-pencil-square btn btn-primary shadow-sm"
+                        href="avistamiento_faunaU.php?id_avistamiento=<?= $avistamiento['id_avistamiento'] ?>"></a>
+                    </td>
+                    <td>
+                      <a class="bi bi-trash3-fill btn btn-danger shadow-sm"
+                        href="model/borrar_avistamiento_fauna.php?id_avistamiento=<?= $avistamiento['id_avistamiento'] ?>"></a>
+                    </td>
+                  </tr>
+                <?php endforeach; ?>
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
     </div>
   </main>

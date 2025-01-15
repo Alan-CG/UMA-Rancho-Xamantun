@@ -1,5 +1,4 @@
-<?php include 'model/especie_flora_select.php' ?>;
-<?php include 'model/modificar_avistamiento_flora.php' ?>;
+<?php include 'model/modificar_especie_fauna.php' ?>;
 <!DOCTYPE html>
 <html lang="en">
 
@@ -75,65 +74,102 @@
     <br>
     <main class="fixed-top-offset">
         <div class="container">
-            <h4 class="text-center">Formulario de registro de avistamiento</h4>
+            <h4 class="text-center">Formulario de registro de especie</h4>
             <div class="card card-default border-light shadow p-3 mb-5">
-                <form action="model/modificar_avistamiento_flora.php" method="POST" class="needs-validation" enctype="multipart/form-data" novalidate>
-                    <div class="row row-cols-4">
-                        <input hidden name="id_avistamiento" value="<?= $avistamientos['id_avistamiento'] ?>" required>
+                <form action="model/modificar_especie_fauna.php" method="POST" class="needs-validation" novalidate>
+                    <div class="row row-cols-3">
+                        <div class="mb-3">
+                            <label class="form-label" for="input_nombrecientifico">Nombre Científico</label>
+                            <input type="text" class="form-control" id="input_nombrecientifico"
+                                name="input_nombrecientifico" value="<?= $especies['nombre_cientifico'] ?>" required>
+                            <div class="valid-feedback">Campo correcto!</div>
+                            <div class="invalid-feedback">Rellena el campo correctamente</div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="input_nombrecomun">Nombre Común</label>
+                            <input type="text" class="form-control" id="input_nombrecomun"
+                                name="input_nombrecomun" value="<?= $especies['nombre_comun'] ?>" required>
+                            <div class="valid-feedback">Campo correcto!</div>
+                            <div class="invalid-feedback">Rellena el campo correctamente</div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="input_reino">Reino</label>
+                            <input type="text" class="form-control" id="input_reino"
+                                name="input_reino" value="<?= $especies['reino'] ?>" required>
+                            <div class="valid-feedback">Campo correcto!</div>
+                            <div class="invalid-feedback">Rellena el campo correctamente</div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="input_filo">Filo</label>
+                            <input type="text" class="form-control" id="input_filo"
+                                name="input_filo" value="<?= $especies['filo'] ?>" required>
+                            <div class="valid-feedback">Campo correcto!</div>
+                            <div class="invalid-feedback">Rellena el campo correctamente</div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="input_clase">Clase</label>
+                            <input type="text" class="form-control" id="input_clase"
+                                name="input_clase" value="<?= $especies['clase'] ?>" required>
+                            <div class="valid-feedback">Campo correcto!</div>
+                            <div class="invalid-feedback">Rellena el campo correctamente</div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="input_orden">Orden</label>
+                            <input type="text" class="form-control" id="input_orden"
+                                name="input_orden" value="<?= $especies['orden'] ?>" required>
+                            <div class="valid-feedback">Campo correcto!</div>
+                            <div class="invalid-feedback">Rellena el campo correctamente</div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="input_familia">Familia</label>
+                            <input type="text" class="form-control" id="input_familia"
+                                name="input_familia" value="<?= $especies['familia'] ?>" required>
+                            <div class="valid-feedback">Campo correcto!</div>
+                            <div class="invalid-feedback">Rellena el campo correctamente</div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="input_genero">Genero</label>
+                            <input type="text" class="form-control" id="input_genero"
+                                name="input_genero" value="<?= $especies['genero'] ?>" required>
+                            <div class="valid-feedback">Campo correcto!</div>
+                            <div class="invalid-feedback">Rellena el campo correctamente</div>
+                        </div>
                         <div class="mb-3">
                             <label class="form-label" for="input_especie">Especie</label>
-                            <select class="form-select" id="input_especie" name="input_especie" required>
-                                <?php foreach ($especies as $opciones):  ?>
-                                    <option value="<?php echo $opciones['id_especie'] ?>"><?php echo $opciones['especie'] ?></option>
-                                <?php endforeach; ?>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label" for="input_fecha_avista">Fecha del avistamiento</label>
-                            <input type="date" class="form-control" id="input_fecha_avista"
-                                name="input_fecha_avista" value="<?= $avistamientos['fecha_avistamiento'] ?>" required>
+                            <input type="text" class="form-control" id="input_especie"
+                                name="input_especie" value="<?= $especies['especie'] ?>" required>
                             <div class="valid-feedback">Campo correcto!</div>
                             <div class="invalid-feedback">Rellena el campo correctamente</div>
                         </div>
-                        <div class="mb-3">
-                            <label class="form-label" for="input_latitud">Latitud</label>
-                            <input type="number" step="0.00000001" class="form-control" id="input_latitud"
-                                name="input_latitud" value="<?= $avistamientos['latitud'] ?>" required>
-                            <div class="valid-feedback">Campo correcto!</div>
-                            <div class="invalid-feedback">Rellena el campo correctamente</div>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label" for="input_longitud">Longitud</label>
-                            <input type="number" step="0.00000001" class="form-control" id="input_longitud"
-                                name="input_longitud" value="<?= $avistamientos['longitud'] ?>" required>
-                            <div class="valid-feedback">Campo correcto!</div>
-                            <div class="invalid-feedback">Rellena el campo correctamente</div>
-                        </div>
-
                     </div>
                     <div class="row row-cols-2">
                         <div class="mb-3">
-                            <label class="form-label" for="input_descripcion">Descripción</label>
-                            <textarea class="form-control" id="input_descripcion" name="input_descripcion" required><?= $avistamientos['descripcion'] ?></textarea>
+                            <label class="form-label" for="input_descripcion">Descripción Física</label>
+                            <textarea type="text" class="form-control" name="input_descripcion" id="input_descripcion"
+                                required><?= $especies['descripcion_fisica'] ?></textarea>
                             <div class="valid-feedback">Campo correcto!</div>
                             <div class="invalid-feedback">Rellena el campo correctamente</div>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label" for="input_imagen">Imagen cargada previamente</label>
-                            <div class="row">
-                                <img src="<?= $avistamientos['ruta_imagen']; ?>" style="max-width: 300px; height: auto;">
-                            </div>
+                            <label class="form-label" for="input_habitat">Habitat</label>
+                            <textarea type="text" class="form-control" id="input_habitat"
+                                name="input_habitat" required><?= $especies['habitat'] ?></textarea>
+                            <div class="valid-feedback">Campo correcto!</div>
+                            <div class="invalid-feedback">Rellena el campo correctamente</div>
                         </div>
+                    </div>
+                    <div class="row row-cols-3">
                         <div class="mb-3">
-                            <label class="form-label" for="input_imagen">Cargar nueva imagen</label>
-                            <input type="file" class="form-control" id="input_imagen"
-                                name="input_imagen" placeholder="Orden al que pertenece" accept="image/*">
+                            <label class="form-label" for="input_conservacion">Estado de conservación</label>
+                            <input type="text" class="form-control" id="input_conservacion"
+                                name="input_conservacion" value="<?= $especies['estado_conservacion'] ?>" required>
                             <div class="valid-feedback">Campo correcto!</div>
                             <div class="invalid-feedback">Rellena el campo correctamente</div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group col-md-4">
+                            <input type="hidden" name="id_especie" value="<?= $codigo ?>">
                             <button type="submit" class="btn btn-success" name="submit">Modificar</button>
                         </div>
                     </div>
@@ -141,7 +177,7 @@
             </div>
             <div style="padding-bottom:0.5cm" class="row w-100 align-items-center">
                 <div class="col text-center">
-                    <a href="avistamiento_animalR.php" class="btn btn-success bi bi-arrow-return-left"></a>
+                    <a href="especie_faunaR.php" class="btn btn-success bi bi-arrow-return-left"></a>
                 </div>
             </div>
         </div>

@@ -1,4 +1,4 @@
-<?php include 'model/leer_avistamientos_flora.php' ?>;
+<?php include 'model/leer_datos_fauna.php' ?>;
 <!DOCTYPE html>
 <html lang="en">
 
@@ -73,20 +73,91 @@
   <br>
   <main class="fixed-top-offset">
     <div class="container">
-      <h4 class="text-center">Listado de avistamientos de Flora</h4>
-      <div class="row row-cols-5 grid gap-2">
-        <?php
-        foreach ($avistamientos as $avistamiento): ?>
-          <div style="width: 16rem;" class="card card-default border-light shadow p-3 mb-5">
-            <img src="<?= $avistamiento['ruta_imagen']; ?>" class="card-img-top" style="max-width: 220; height: 160;">
-            <div class="card-body">
-              <h5 class="card-title"><?= $avistamiento['especie']; ?></h5>
-              <p style="max-width: 190; height: 50;" class="card-text"><?= $avistamiento['descripcion']; ?></p>
-              <p class="card-text"><?= $avistamiento['fecha_avistamiento']; ?></p>
-              <a href="avistamiento_flora_ficha.php?id_avistamiento=<?= $avistamiento['id_avistamiento'] ?>" class="btn btn-primary">Más información</a>
-            </div>
+      <h4 class="text-center">Listado de especies de Fauna</h4>
+      <div class="card card-default border-light shadow p-3 mb-5">
+        <div class="form-row">
+          <div class="form-group col">
+            <a class="btn btn-success shadow-sm" href="especie_faunaC.php">Nuevo registro</a>
           </div>
-        <?php endforeach; ?>
+        </div>
+        <div class="row w-100 align-items-center table-responsive-md justify-content-center">
+          <div class="col text-center table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th hidden scope="col">ID</th>
+                  <th scope="col">Nombre Científico</th>
+                  <th scope="col">Nombre Común</th>
+                  <th scope="col">Reino</th>
+                  <th scope="col">Filo</th>
+                  <th scope="col">Clase</th>
+                  <th scope="col">Orden</th>
+                  <th scope="col">Familia</th>
+                  <th scope="col">Género</th>
+                  <th scope="col">Especie</th>
+                  <th scope="col">Descripcion física</th>
+                  <th scope="col">Hábitat</th>
+                  <th scope="col">Estado de conservación</th>
+                  <th scope="col">Editar registro</th>
+                  <th scope="col">Eliminar Registro</th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php foreach ($especies as $especie): ?>
+                  <tr>
+                    <td hidden>
+                      <?= $especie['id_especie']; ?>
+                    </td>
+                    <td>
+                      <?= $especie['nombre_cientifico']; ?>
+                    </td>
+                    <td>
+                      <?= $especie['nombre_comun']; ?>
+                    </td>
+                    <td>
+                      <?= $especie['reino']; ?>
+                    </td>
+                    <td>
+                      <?= $especie['filo']; ?>
+                    </td>
+                    <td>
+                      <?= $especie['clase']; ?>
+                    </td>
+                    <td>
+                      <?= $especie['orden']; ?>
+                    </td>
+                    <td>
+                      <?= $especie['familia']; ?>
+                    </td>
+                    <td>
+                      <?= $especie['genero']; ?>
+                    </td>
+                    <td>
+                      <?= $especie['especie']; ?>
+                    </td>
+                    <td>
+                      <?= $especie['descripcion_fisica']; ?>
+                    </td>
+                    <td>
+                      <?= $especie['habitat']; ?>
+                    </td>
+                    <td>
+                      <?= $especie['estado_conservacion']; ?>
+                    </td>
+                    <td>
+                      <a class="bi bi bi-pencil-square btn btn-primary shadow-sm"
+                        href="especie_faunaU.php?id_especie=<?= $especie['id_especie'] ?>"></a>
+                    </td>
+                    <td>
+                      <a class="bi bi-trash3-fill btn btn-danger shadow-sm"
+                        href="model/borrar_especie_fauna.php?id_especie=<?= $especie['id_especie'] ?>"></a>
+                    </td>
+                  </tr>
+                <?php endforeach; ?>
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
     </div>
   </main>

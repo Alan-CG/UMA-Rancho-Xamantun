@@ -1,5 +1,5 @@
-<?php include 'model/especie_flora_select.php' ?>;
-<?php include 'model/modificar_avistamiento_flora.php' ?>;
+<?php include 'model/especie_fauna_select.php' ?>;
+<?php include 'model/modificar_avistamiento_fauna.php' ?>;
 <!DOCTYPE html>
 <html lang="en">
 
@@ -77,7 +77,7 @@
         <div class="container">
             <h4 class="text-center">Formulario de registro de avistamiento</h4>
             <div class="card card-default border-light shadow p-3 mb-5">
-                <form action="model/modificar_avistamiento_flora.php" method="POST" class="needs-validation" enctype="multipart/form-data" novalidate>
+                <form action="model/modificar_avistamiento_fauna.php" method="POST" class="needs-validation" enctype="multipart/form-data" novalidate>
                     <div class="row row-cols-4">
                         <input hidden name="id_avistamiento" value="<?= $avistamientos['id_avistamiento'] ?>" required>
                         <div class="mb-3">
@@ -141,7 +141,7 @@
             </div>
             <div style="padding-bottom:0.5cm" class="row w-100 align-items-center">
                 <div class="col text-center">
-                    <a href="avistamiento_animalR.php" class="btn btn-success bi bi-arrow-return-left"></a>
+                    <a href="avistamiento_faunaR.php" class="btn btn-success bi bi-arrow-return-left"></a>
                 </div>
             </div>
         </div>
