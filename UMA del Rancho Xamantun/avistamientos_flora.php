@@ -1,4 +1,4 @@
-<?php include 'model/leer_avistamientos_animales.php' ?>;
+<?php include 'model/leer_avistamientos_flora.php' ?>;
 <!DOCTYPE html>
 <html lang="en">
 
@@ -65,18 +65,18 @@
     <div class="container">
       <h4 class="text-center">Listado de avistamientos de fauna</h4>
       <div class="form-group col">
-        <a class="btn btn-success shadow-sm" href="avistamiento_animalC.php">Nuevo avistamiento</a>
-      </div>
+            <a class="btn btn-success shadow-sm" href="avistamiento_floraC.php">Nuevo avistamiento</a>
+          </div>
       <div class="row row-cols-5 grid gap-2">
         <?php
         foreach ($avistamientos as $avistamiento): ?>
           <div style="width: 16rem;" class="card card-default border-light shadow p-3 mb-5">
-            <img src="<?= $avistamiento['ruta_imagen']; ?>" class="card-img-top" style="max-width: 220; height: 160;">
+            <img  src="<?= $avistamiento['ruta_imagen']; ?>" class="card-img-top" style="max-width: 220; height: 160;">
             <div class="card-body">
               <h5 class="card-title"><?= $avistamiento['especie']; ?></h5>
               <p style="max-width: 190; height: 50;" class="card-text"><?= $avistamiento['descripcion']; ?></p>
               <p class="card-text"><?= $avistamiento['fecha_avistamiento']; ?></p>
-              <a href="avistamiento_animal_ficha.php?id_avistamiento=<?= $avistamiento['id_avistamiento'] ?>" class="btn btn-primary">Más información</a>
+              <a href="avistamiento_flora_ficha.php?id_avistamiento=<?= $avistamiento['id_avistamiento'] ?>" class="btn btn-primary">Más información</a>
             </div>
           </div>
         <?php endforeach; ?>

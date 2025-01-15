@@ -1,4 +1,4 @@
-<?php include 'model/leer_avistamientos_animales.php' ?>;
+<?php include 'model/leer_avistamiento_flora_ficha.php' ?>;
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,6 +12,12 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
     crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""></script>
   <title>Document</title>
 </head>
 
@@ -63,24 +69,24 @@
   <br>
   <main class="fixed-top-offset">
     <div class="container">
-      <h4 class="text-center">Listado de avistamientos de fauna</h4>
-      <div class="form-group col">
-        <a class="btn btn-success shadow-sm" href="avistamiento_animalC.php">Nuevo avistamiento</a>
-      </div>
-      <div class="row row-cols-5 grid gap-2">
-        <?php
-        foreach ($avistamientos as $avistamiento): ?>
-          <div style="width: 16rem;" class="card card-default border-light shadow p-3 mb-5">
-            <img src="<?= $avistamiento['ruta_imagen']; ?>" class="card-img-top" style="max-width: 220; height: 160;">
-            <div class="card-body">
-              <h5 class="card-title"><?= $avistamiento['especie']; ?></h5>
-              <p style="max-width: 190; height: 50;" class="card-text"><?= $avistamiento['descripcion']; ?></p>
-              <p class="card-text"><?= $avistamiento['fecha_avistamiento']; ?></p>
-              <a href="avistamiento_animal_ficha.php?id_avistamiento=<?= $avistamiento['id_avistamiento'] ?>" class="btn btn-primary">Más información</a>
-            </div>
+      <h4 class="text-center">Ficha de avistamiento</h4>
+      <div class="card card-default border-light shadow p-3 mb-5">
+        <div class="row">
+          <div class="col">
+            <input type="hidden" id="id_avistamiento" value="<?= $avistamientos['id_avistamiento'] ?>">
+            <h4 class="fs-5 text">Fecha de avistamiento: <?= $avistamientos['fecha_avistamiento'] ?></h4>
+            <img class="mt-3" style="width: 450; height: 300;" src="<?= $avistamientos['ruta_imagen'] ?>">
+            <p style="max-width: 450px;" class="fs-5 text mt-4"> Descripción: <?= $avistamientos['descripcion'] ?></p>
           </div>
-        <?php endforeach; ?>
+          <div class="col">
+            <h4 class="fs-5 text text-center">Nombre científico: <?= $avistamientos['nombre_cientifico'] ?></h4>
+            <p class="fs-5 text text-center">Nombre común: <?= $avistamientos['nombre_comun'] ?></p>
+            <div id="map"></div>
+            <h4 class="fs-5 text text-center mt-3">Ubicación del avistamiento</h4>
+          </div>
+        </div>
       </div>
+      <script src="JS/puntos_avistamiento_flora.JS"></script>
     </div>
   </main>
   <br>
@@ -89,6 +95,7 @@
       <h4>&copy; 2025-UMA del Rancho Xamantún. Todos los derechos reservados.</h4>
     </div>
   </footer>
+  
 </body>
 
 </html>

@@ -86,7 +86,7 @@
           </div>
         </div>
       </div>
-      <script src="JS/puntos_avistamiento.JS"></script>
+      <script src="JS/puntos_avistamiento_animal.JS"></script>
     </div>
   </main>
   <br>
