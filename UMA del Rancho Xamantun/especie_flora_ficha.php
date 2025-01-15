@@ -1,4 +1,4 @@
-<?php include 'model/leer_avistamientos_animales.php' ?>;
+<?php include 'model/leer_especie_flora_ficha.php' ?>;
 <!DOCTYPE html>
 <html lang="en">
 
@@ -63,20 +63,32 @@
   <br>
   <main class="fixed-top-offset">
     <div class="container">
-      <h4 class="text-center">Listado de avistamientos de fauna</h4>
-      <div class="row row-cols-5 grid gap-2">
-        <?php
-        foreach ($avistamientos as $avistamiento): ?>
-          <div style="width: 16rem;" class="card card-default border-light shadow p-3 mb-5">
-            <img src="<?= $avistamiento['ruta_imagen']; ?>" class="card-img-top" style="max-width: 220; height: 160;">
-            <div class="card-body">
-              <h5 class="card-title"><?= $avistamiento['especie']; ?></h5>
-              <p style="max-width: 190; height: 50;" class="card-text"><?= $avistamiento['descripcion']; ?></p>
-              <p class="card-text"><?= $avistamiento['fecha_avistamiento']; ?></p>
-              <a href="avistamiento_animal_ficha.php?id_avistamiento=<?= $avistamiento['id_avistamiento'] ?>" class="btn btn-primary">Más información</a>
-            </div>
+      <h4 class="text-center">Ficha de Especie</h4>
+      <div class="col">
+        <a href="especies_flora.php" class="btn btn-success bi bi-arrow-return-left"> Regresar</a>
+      </div>
+      <div class="card card-default border-light shadow p-3 mb-5">
+        <div class="row">
+          <div class="col">
+            <input type="hidden" id="id_avistamiento" value="<?= $avistamientos['id_especie'] ?>">
+            <h4 class="fs-5 text">Fotografía:</h4>
+            <img class="mt-3" style="width: 450; height: 300;" src="<?= $avistamientos['ruta_imagen'] ?>">
           </div>
-        <?php endforeach; ?>
+          <div class="col">
+            <h4 class="fs-5 text ">Nombre científico: <span style="font-weight: normal;"><?= $avistamientos['nombre_cientifico'] ?></span></h4>
+            <h4 class="fs-5 text ">Nombre común: <span style="font-weight: normal;"><?= $avistamientos['nombre_comun'] ?></span></h4>
+            <h4 class="fs-5 text ">Reino: <span style="font-weight: normal;"><?= $avistamientos['reino'] ?></span></h4>
+            <h4 class="fs-5 text ">Filo: <span style="font-weight: normal;"><?= $avistamientos['filo'] ?></span></h4>
+            <h4 class="fs-5 text ">Clase: <span style="font-weight: normal;"><?= $avistamientos['clase'] ?></span></h4>
+            <h4 class="fs-5 text ">Orden: <span style="font-weight: normal;"><?= $avistamientos['orden'] ?></span></h4>
+            <h4 class="fs-5 text ">Familia: <span style="font-weight: normal;"><?= $avistamientos['familia'] ?></span></h4>
+            <h4 class="fs-5 text ">Genero: <span style="font-weight: normal;"><?= $avistamientos['genero'] ?></span></h4>
+            <h4 class="fs-5 text ">Especie: <span style="font-weight: normal;"><?= $avistamientos['especie'] ?></span></h4>
+            <h4 class="fs-5 text ">Descripción Física: <span style="font-weight: normal;"><?= $avistamientos['descripcion_fisica'] ?></span></h4>
+            <h4 class="fs-5 text ">Hábitat: <span style="font-weight: normal;"><?= $avistamientos['habitat'] ?></span></h4>
+            <h4 class="fs-5 text ">Estado de conservación: <span style="font-weight: normal;"><?= $avistamientos['estado_conservacion'] ?></span></h4>
+          </div>
+        </div>
       </div>
     </div>
   </main>
@@ -86,6 +98,7 @@
       <h4>&copy; 2025-UMA del Rancho Xamantún. Todos los derechos reservados.</h4>
     </div>
   </footer>
+
 </body>
 
 </html>

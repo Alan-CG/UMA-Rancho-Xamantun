@@ -64,9 +64,6 @@
   <main class="fixed-top-offset">
     <div class="container">
       <h4 class="text-center">Listado de avistamientos de fauna</h4>
-      <div class="form-group col">
-            <a class="btn btn-success shadow-sm" href="avistamiento_floraC.php">Nuevo avistamiento</a>
-          </div>
       <div class="row row-cols-5 grid gap-2">
         <?php
         foreach ($avistamientos as $avistamiento): ?>
