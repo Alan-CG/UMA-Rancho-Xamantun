@@ -8,14 +8,14 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 //Funcionalidad para mostrar los puntos con click en el mapa (DESCOMENTAR EN CASO DE PRUEBAS)
-//var popup = L.popup();
-//function onMapClick(e) {
-    //popup
-        //.setLatLng(e.latlng)
-        //.setContent("Hiciste click en " + e.latlng.toString())
-        //.openOn(map);
-//}
-//map.on('click', onMapClick);
+var popup = L.popup();
+function onMapClick(e) {
+    popup
+        .setLatLng(e.latlng)
+        .setContent("Hiciste click en " + e.latlng.toString())
+        .openOn(map);
+}
+map.on('click', onMapClick);
 
 //Marcadores personalizados
 
